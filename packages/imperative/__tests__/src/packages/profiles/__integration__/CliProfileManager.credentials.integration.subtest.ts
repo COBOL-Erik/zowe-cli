@@ -264,7 +264,7 @@ describe("Cli Profile Manager", () => {
                 const result = T.executeTestCLICommand(cliBin, this, cmd.split(" "));
                 expect(result.stdout).toEqual("");
                 expect(result.stderr).toContain(profileName);
-                expect(result.stderr).toContain("Failed to load Keytar module");
+                expect(result.stderr).toContain("Failed to load Secrets SDK module");
             });
 
             it("should fail if keytar is not loaded on using profile handler", () => {
@@ -279,7 +279,7 @@ describe("Cli Profile Manager", () => {
                 cmd = `display-profile`;
                 result = T.executeTestCLICommand(cliBin, this, cmd.split(" "));
                 expect(result.stderr).toContain("Command Preparation Failed");
-                expect(result.stderr).toContain("Failed to load Keytar module");
+                expect(result.stderr).toContain("Failed to load Secrets SDK module");
             });
 
             it("should fail if keytar is not loaded on profiles delete", () => {

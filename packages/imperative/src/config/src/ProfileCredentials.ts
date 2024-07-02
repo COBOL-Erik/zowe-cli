@@ -43,7 +43,7 @@ export class ProfileCredentials {
                         (this as any).keytar = requireKeytar();
                     } catch (error) {
                         throw new ImperativeError({
-                            msg: `Failed to load Keytar module: ${error.message}`,
+                            msg: `Failed to load Secrets SDK module: ${error.message}`,
                             causeErrors: error
                         });
                     }

@@ -69,7 +69,7 @@ describe("DefaultCredentialManager", () => {
 
                 expect(privateManager.keytar).toBeUndefined();
                 expect(privateManager.loadError).toBeInstanceOf(ImperativeError);
-                expect(privateManager.loadError.message).toMatch(/^Failed to load Keytar module:/);
+                expect(privateManager.loadError.message).toMatch(/^Failed to load Secrets SDK module:/);
             });
 
             it("should look for keytar in CLI node_modules folder", async () => {

@@ -125,14 +125,14 @@ export class DefaultCredentialManager extends AbstractCredentialManager {
             }
             // use helper function for require.resolve so it can be mocked in jest tests
             const keytarPath = require.resolve("@zowe/secrets-for-zowe-sdk", requireOpts);
-            Logger.getImperativeLogger().debug("Loading Keytar module from", keytarPath);
+            Logger.getImperativeLogger().debug("Loading Secrets SDK module from", keytarPath);
             this.keytar = (await import(keytarPath)).keyring;
         } catch (error) {
             this.loadError = new ImperativeError({
-                msg: `Failed to load Keytar module: ${error.message}`,
+                msg: `Failed to load Secrets SDK module: ${error.message}`,
                 causeErrors: error
             });
-            Logger.getImperativeLogger().debug("Failed to load Keytar module:\n", error.stack);
+            Logger.getImperativeLogger().debug("Failed to load Secrets SDK module:\n", error.stack);
         }
     }
 

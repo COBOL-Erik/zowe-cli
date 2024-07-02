@@ -229,7 +229,7 @@ describe("ProfileCredentials tests", () => {
             }
 
             expect(caughtError).toBeDefined();
-            expect(caughtError.message).toMatch(/^Failed to load Keytar module:/);
+            expect(caughtError.message).toMatch(/^Failed to load Secrets SDK module:/);
             expect(CredentialManagerFactory.initialize).toHaveBeenCalledTimes(1);
             expect(requireKeytar).toHaveBeenCalledTimes(1);
         });
@@ -276,7 +276,7 @@ describe("ProfileCredentials tests", () => {
             }
 
             expect(caughtError).toBeDefined();
-            expect(caughtError.message).toMatch(/^Failed to load Keytar module:/);
+            expect(caughtError.message).toMatch(/^Failed to load Secrets SDK module:/);
             expect(CredentialManagerFactory.initialize).toHaveBeenCalledTimes(1);
             expect(requireKeytar).toHaveBeenCalledTimes(1);
         });
